@@ -19,7 +19,10 @@ public class SuperArray{
     }else{
       return false;
     }
+  }
 
+  public String get(int index){
+    return data[index];
   }
 
 }
