@@ -31,4 +31,12 @@ public class SuperArray{
     return x;
   }
 
+  private void resize(){
+    String[] data2 = new String[data.length + 1];
+    for(int i = 0; i < data.length; i++){
+      data2[i] = data[i];
+    }
+    data = data2;
+  }
+
 }
