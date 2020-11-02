@@ -17,7 +17,10 @@ public class SuperArray{
       size++;
       return true;
     }else{
-      return false;
+      resize();
+      data[size] = element;
+      size++;
+      return true;      
     }
   }
 
