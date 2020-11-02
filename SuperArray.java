@@ -12,7 +12,7 @@ public class SuperArray{
   }
 
   public boolean add(String element){
-    if(size != 10){
+    if(size == data.length - 1){
       data[size] = element;
       size++;
       return true;
@@ -20,7 +20,7 @@ public class SuperArray{
       resize();
       data[size] = element;
       size++;
-      return true;      
+      return true;
     }
   }
 
