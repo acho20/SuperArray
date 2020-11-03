@@ -42,4 +42,8 @@ public class SuperArray{
     data = data2;
   }
 
+  public boolean isEmpty(){
+    return (size == 0);
+  }
+
 }
