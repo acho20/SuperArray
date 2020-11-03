@@ -29,7 +29,19 @@ public class SuperArray{
     }
   }
 
-  
+  public void add (int index, String element){
+    if(size == data.length){
+      resize();
+    }
+    String[] temp = new String[size - index];
+    for(int i = index - 1; i < size; i++){
+      temp[i - index + 1] = data[i];
+    }
+    data[index] = element;
+    for (int i = 0; i < temp.length; i++){
+      data[index + i + 1] = temp[i];
+    }
+  }
 
   public String get(int index){
     return data[index];
