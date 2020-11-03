@@ -7,6 +7,11 @@ public class SuperArray{
     size = 0;
   }
 
+  public SuperArray(int initialCapacity){
+    data = new String[initialCapacity];
+    size = 0;
+  }
+
   public int size(){
     return size;
   }
@@ -23,6 +28,8 @@ public class SuperArray{
       return true;
     }
   }
+
+  
 
   public String get(int index){
     return data[index];
