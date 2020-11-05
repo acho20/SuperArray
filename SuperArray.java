@@ -100,5 +100,12 @@ public class SuperArray{
     return x;
   }
 
+  public int indexOf(String s){
+    for (int i = 0; i < size; i++){
+      if (data[i] == s) return i;
+    }
+    return -1;
+  }
+
 
 }
