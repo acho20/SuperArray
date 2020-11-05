@@ -17,7 +17,7 @@ public class SuperArray{
   }
 
   public boolean add(String element){
-    if(size == data.length - 1){
+    if(size < data.length){
       data[size] = element;
       size++;
       return true;
@@ -30,16 +30,19 @@ public class SuperArray{
   }
 
   public void add (int index, String element){
-    if(size == data.length){
-      resize();
-    }
-    String[] temp = new String[size - index];
-    for(int i = index - 1; i < size; i++){
-      temp[i - index + 1] = data[i];
-    }
-    data[index] = element;
-    for (int i = 0; i < temp.length; i++){
-      data[index + i + 1] = temp[i];
+    if(index > -1){
+      if(size == data.length){
+        resize();
+      }
+      String[] temp = new String[size - index];
+      for(int i = index - 1; i < size; i++){
+        temp[i - index + 1] = data[i];
+      }
+      data[index] = element;
+      for (int i = 0; i < temp.length; i++){
+        data[index + i + 1] = temp[i];
+      }
+      size++;
     }
   }
 
@@ -55,10 +58,11 @@ public class SuperArray{
 
   private void resize(){
     String[] data2 = new String[data.length * 2];
-    for(int i = 0; i < data.length; i++){
+    for(int i = 0; i < size; i++){
       data2[i] = data[i];
     }
     data = data2;
+
   }
 
   public boolean isEmpty(){
@@ -73,12 +77,13 @@ public class SuperArray{
   public String toString(){
     String x = "[";
     for(int i = 0; i < size; i++){
-      x += data[i] + ", ";
       if (i == size - 1){
-        x += data[i] + "]";
+        x += data[i];
+      }else{
+        x += data[i] + ", ";
       }
     }
-    return x;
+    return x + "]";
   }
 
   public boolean contains(String s){
@@ -102,7 +107,9 @@ public class SuperArray{
 
   public int indexOf(String s){
     for (int i = 0; i < size; i++){
-      if (data[i] == s) return i;
+      if (data[i] == s){
+        return i;
+      }
     }
     return -1;
   }
