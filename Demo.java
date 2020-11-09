@@ -1,13 +1,18 @@
 public class Demo{
   public static void removeDuplicates(SuperArray s){
     boolean looped = false;
+    boolean removed = false;
     while(!looped){
       for(int i = 0; i < s.size() - 1; i++){
+        if(removed){
+          removed = false;
+          continue;
+        }
         if (i == s.size() - 2) looped = true;
         for(int j = i + 1; j < s.size(); j++){
           if(s.toArray()[i] == s.toArray()[j]){
             s.remove(j);
-            break;
+            removed = true;
           }
         }
       }
