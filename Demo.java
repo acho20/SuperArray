@@ -31,6 +31,19 @@ public class Demo{
     return x;
   }
 
+  public static SuperArray zip(SuperArray a, SuperArray b){
+    SuperArray c = new SuperArray(a.size() + b.size());
+    for (int i = 0; i < a.size(); i++){
+      c.add(a.get(i));
+    }
+    for(int i = 0; i < b.size(); i++){
+      c.add(b.get(i));
+    }
+    return c;
+  }
+
+
+
   public static void main(String[]args){
     SuperArray words = new SuperArray();
     //grouped to save vertical space
