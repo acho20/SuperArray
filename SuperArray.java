@@ -122,4 +122,22 @@ public class SuperArray{
     return data2;
   }
 
+  public int lastIndexOf(String value){
+    int current = indexOf(value);
+    if (current == -1) return -1;
+    SuperArray x = new SuperArray();
+    while(true){
+      if(indexOf(value) == -1){
+        for(int i = 0; i < x.size(); i++){
+          this.set(Integer.parseInt(x.get(i)), value);
+        }
+        return current;
+      }else{
+        current = indexOf(value);
+        x.add(Integer.toString(current));
+        this.set(current, "counted; don't count again");
+      }
+    }
+  }
+
 }
