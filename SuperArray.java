@@ -140,4 +140,12 @@ public class SuperArray{
     }
   }
 
+  public boolean equals(SuperArray other){
+    if(size() != other.size()) return false;
+    for(int i = 0; i < size();i++){
+      if(get(i) != other.get(i))return false;
+    }
+    return true;
+  }
+
 }
