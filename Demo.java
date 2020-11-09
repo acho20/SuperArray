@@ -18,6 +18,19 @@ public class Demo{
       }
     }
   }
+
+  public static SuperArray findOverlap(SuperArray a, SuperArray b){
+    SuperArray x = new SuperArray(0);
+    for(int i = 0; i < a.size();i++){
+      for(int j = 0; j < b.size();j++){
+        if (a.toArray()[i] == b.toArray()[j] && x.indexOf(a.toArray()[i]) == -1){
+          x.add(a.toArray()[i]);
+        }
+      }
+    }
+    return x;
+  }
+
   public static void main(String[]args){
     SuperArray words = new SuperArray();
     //grouped to save vertical space
