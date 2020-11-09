@@ -20,7 +20,7 @@ public class Demo{
   }
 
   public static SuperArray findOverlap(SuperArray a, SuperArray b){
-    SuperArray x = new SuperArray(0);
+    SuperArray x = new SuperArray();
     for(int i = 0; i < a.size();i++){
       for(int j = 0; j < b.size();j++){
         if (a.toArray()[i] == b.toArray()[j] && x.indexOf(a.toArray()[i]) == -1){
@@ -40,5 +40,5 @@ public class Demo{
 
     System.out.println(words);
     removeDuplicates(words);
-    System.out.println(words);  }
+    System.out.println(words);}
 }
