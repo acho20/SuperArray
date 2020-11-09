@@ -33,11 +33,13 @@ public class Demo{
 
   public static SuperArray zip(SuperArray a, SuperArray b){
     SuperArray c = new SuperArray(a.size() + b.size());
-    for (int i = 0; i < a.size(); i++){
-      c.add(a.get(i));
-    }
-    for(int i = 0; i < b.size(); i++){
-      c.add(b.get(i));
+    for (int i = 0; i < Math.max(a.size(),b.size()); i++){
+      if(i < a.size()){
+        c.add(a.get(i));
+      }
+      if(i < b.size()){
+        c.add(b.get(i));
+      }
     }
     return c;
   }
