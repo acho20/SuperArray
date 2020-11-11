@@ -105,6 +105,9 @@ public class SuperArray{
   }
 
   public String remove (int index){
+    if(index < 0 || index >= size){
+      throw new IndexOutOfBoundsException ("index " + index + " is out of range.");
+    }
     String x = data[index];
     for(int i = index; i < size - 1; i++){
       data[i] = data[i + 1];
